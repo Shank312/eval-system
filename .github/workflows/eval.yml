@@ -1,0 +1,37 @@
+
+
+name: Eval
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: |
+          python -m pip install -U pip
+          pip install -r eval-system/requirements.txt
+          python - <<'PY'
+          import nltk
+          nltk.download('punkt', quiet=True)
+          try:
+            nltk.download('punkt_tab', quiet=True)
+          except Exception:
+            pass
+          PY
+      - name: Run unit tests
+        run: |
+          python -m pytest -q
+      - name: Run sample eval
+        run: |
+          python -m eval_system.harness --pred eval-system/examples/preds.json --refs eval-system/examples/refs.json --ctx eval-system/examples/ctx.json --out eval-system/examples/results.json
+      - name: Show results
+        run: |
+          cat eval-system/examples/results.json || true

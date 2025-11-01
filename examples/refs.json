@@ -1,0 +1,5 @@
+[
+  { "id": "ex1", "references": ["Paris is the capital of France."] },
+  { "id": "ex2", "references": ["42"] },
+  { "id": "ex3", "references": ["Dynamic programming is a common solution for knapsack."] }
+]

@@ -1,0 +1,4 @@
+{
+  "ex1": { "sources": ["1", "doc2"] },
+  "ex3": { "sources": ["https://en.wikipedia.org/wiki/Knapsack_problem"] }
+}

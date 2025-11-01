@@ -1,0 +1,61 @@
+{
+  "overall": {
+    "exact_match": 0.0,
+    "f1": 0.5443510737628384,
+    "rouge1": 0.5569676700111482,
+    "rougeL": 0.5569676700111482,
+    "missing_citations_rate": 0.3333333333333333,
+    "unsupported_citations_rate": 0.3333333333333333,
+    "avg_citation_count": 0.6666666666666666
+  },
+  "count": 3,
+  "per_example": {
+    "ex1": {
+      "prediction": "Paris is the capital of France. [1]",
+      "references": [
+        "Paris is the capital of France."
+      ],
+      "metrics": {
+        "exact_match": 0,
+        "f1": 0.8235294117647058,
+        "rouge1": 0.923076923076923,
+        "rougeL": 0.923076923076923,
+        "missing_citations": false,
+        "unsupported_citations": [],
+        "citation_count": 1
+      }
+    },
+    "ex2": {
+      "prediction": "The answer is 42.",
+      "references": [
+        "42"
+      ],
+      "metrics": {
+        "exact_match": 0,
+        "f1": 0.33333333333333337,
+        "rouge1": 0.4,
+        "rougeL": 0.4,
+        "missing_citations": true,
+        "unsupported_citations": [],
+        "citation_count": 0
+      }
+    },
+    "ex3": {
+      "prediction": "Use dynamic programming for the knapsack problem. See https://en.wikipedia.org/wiki/Knapsack_problem",
+      "references": [
+        "Dynamic programming is a common solution for knapsack."
+      ],
+      "metrics": {
+        "exact_match": 0,
+        "f1": 0.4761904761904762,
+        "rouge1": 0.3478260869565218,
+        "rougeL": 0.3478260869565218,
+        "missing_citations": false,
+        "unsupported_citations": [
+          "https://en.wikipedia.org/wiki/Knapsack_problem"
+        ],
+        "citation_count": 1
+      }
+    }
+  }
+}
